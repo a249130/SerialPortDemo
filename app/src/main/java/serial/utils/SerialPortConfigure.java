@@ -1,7 +1,7 @@
 package serial.utils;
 /**
  * 串口配置
- * @author fantai-yk
+ * @author yk
  *
  */
 public class SerialPortConfigure {
