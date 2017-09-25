@@ -1,0 +1,211 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.example.ftserialportdemo.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/et_shou"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:focusable="false"
+            android:gravity="left|top"
+            android:hint="串口数据接收"
+            android:inputType="textMultiLine" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5px"
+            android:background="#66CCFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="6.0"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:fillViewport="true"
+                android:scrollbars="vertical" >
+
+                <EditText
+                    android:id="@+id/et_fa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入发送的数据" />
+            </ScrollView>
+
+            <Spinner
+                android:id="@+id/sp_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:entries="@array/code"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/but_send"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:text="发送"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="3dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="#66CCFF" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5.0"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="串口号："
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_serial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/serial"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="波特率："
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_baudrate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/baudrate"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="校验位："
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_nVerify"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/nVerify"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="数据位："
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_nBits"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/nBits"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow android:layout_marginTop="10dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="停止位："
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/sp_nstop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/nstop"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <CheckBox
+                    android:id="@+id/cb_wrap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自动换行显示" />
+
+                <CheckBox
+                    android:id="@+id/cb_shou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="十六进制显示" />
+
+                <CheckBox
+                    android:id="@+id/cb_fa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="十六进制转换" />
+
+                <Button
+                    android:id="@+id/but_open"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="打开串口"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/but_shou"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="清空接收数据"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/but_fa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="清空输入数据"
+                    android:textSize="20sp" />
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
